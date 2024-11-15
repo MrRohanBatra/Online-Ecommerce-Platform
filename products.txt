@@ -1,0 +1,70 @@
+101
+Laptop
+75001
+Electronics
+50
+High-performance laptop with 16GB RAM and 512GB SSD.
+4.8
+102
+Smartphone
+34999.5
+Mobile Devices
+120
+Feature-packed smartphone with AMOLED display.
+4.7
+103
+Chair
+499.99
+Furniture
+200
+Ergonomic chair with adjustable height and lumbar support.
+4.5
+104
+Book
+199
+Books
+500
+Inspiring best-seller for personal growth.
+5
+105
+Washing Machine
+19000
+Home Appliances
+30
+Automatic washing machine with 7kg capacity.
+4.3
+106
+Headphones
+1999.99
+Electronics
+300
+Wireless headphones with noise-canceling technology.
+4.6
+107
+Table
+2999
+Furniture
+150
+Durable wooden table suitable for office and home use.
+4.2
+108
+Blender
+2499.5
+Kitchen Appliances
+80
+Compact blender with multiple speed settings and a safety lock.
+4.4
+109
+Shoes
+1299
+Footwear
+250
+Comfortable running shoes with enhanced grip and cushioning.
+4.1
+110
+Watch
+5499.99
+Accessories
+100
+Stylish smartwatch with health tracking and long battery life.
+4.9
