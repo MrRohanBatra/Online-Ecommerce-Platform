@@ -388,16 +388,17 @@ public:
         return false;
     }
 
-    void purchaseProduct(int id)
+    void purchaseProduct(int id,int topurchase)
     {
         Product *temp = head;
         while (temp)
         {
             if (temp->id == id)
             {
-                if (temp->info.stock > 0)
+                if (temp->info.stock-topurchase > 0)
                 {
-                    temp->info.stock--;
+                    
+                    temp->info.stock-=topurchase;
                     cout << "Purchased " << temp->info.name << ". Remaining stock: " << temp->info.stock << endl;
                 }
                 else
@@ -533,10 +534,10 @@ public:
         productList.saveProductsToFile(filename);
     }
 
-    void purchaseProduct(int id)
+    void purchaseProduct(int id,int topurchase)
     {
 
-        productList.purchaseProduct(id);
+        productList.purchaseProduct(id,topurchase);
     }
     void displayByRating()
     {
@@ -647,6 +648,7 @@ int main()
             cin >> rating;
 
             catalog.insertProduct(id, name, price, category, stock, description, rating);
+            cout<<"Product inserted"<<endl;
             pressanykey();
             break;
         }
@@ -696,10 +698,15 @@ int main()
             break;
         case 8:
         {
+            catalog.displayProducts();
+            cout<<endl;
             int id;
             cout << "Enter product ID to purchase: ";
             cin >> id;
-            catalog.purchaseProduct(id);
+            cout<<"Enter Quantity to purchase: ";
+            int topurchase;
+            cin>>topurchase;
+            catalog.purchaseProduct(id,topurchase);
             pressanykey();
             break;
         }
