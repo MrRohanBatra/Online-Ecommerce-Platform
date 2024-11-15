@@ -208,6 +208,7 @@ public:
                 cout << "ID: " << temp->id << " | Name: " << temp->info.name << " | Price: ₹" << temp->info.price
                      << " | Stock: " << temp->info.stock << " | Rating: " << temp->info.rating << "/5" << endl;
                 cout << "Description: " << temp->info.description << endl;
+                cout<<endl<<endl;
                 found = true;
             }
             temp = temp->next;
@@ -215,6 +216,7 @@ public:
         if (!found)
         {
             cout << "No products found in category: " << category << endl;
+            cout<<endl;
         }
     }
 
@@ -437,6 +439,7 @@ public:
                  << " | Category: " << topProduct->info.category << " | Stock: " << topProduct->info.stock
                  << " | Rating: " << topProduct->info.rating << "/5" << endl;
             cout << "Description: " << topProduct->info.description << endl;
+            cout<<endl<<endl;
         }
     }
 };
@@ -590,6 +593,10 @@ int main()
     string saveFilename = "products.txt";
 
     catalog.loadProducts(loadFilename);
+    system("E-commerce Product catalog");
+    system("@echo off");
+    system("cls");
+    system("color 70");
 
     string username, password;
     cout << "Please login to continue\n";
