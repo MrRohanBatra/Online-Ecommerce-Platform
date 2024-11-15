@@ -597,6 +597,13 @@ int main()
     system("@echo off");
     system("cls");
     system("color 70");
+    cout<<"\t\t\t\t\t\t"<<" ---------------------------"<<endl;
+    cout<<"\t\t\t\t\t\t"<<"|                           |"<<endl;
+    cout<<"\t\t\t\t\t\t"<<"|        E-COMMERCE         |"<<endl;
+    cout<<"\t\t\t\t\t\t"<<"|      PRODUCT CATALOG      |"<<endl;
+    cout<<"\t\t\t\t\t\t"<<"|                           |"<<endl;
+    cout<<"\t\t\t\t\t\t"<<" ---------------------------"<<endl;
+    cout<<"\t\t\t\t"<<"    WELCOME TO THE INTERFACE OF E-COMMERCE PRODUCT CATALOG"<<endl<<endl<<endl<<endl<<endl;
 
     string username, password;
     cout << "Please login to continue\n";
