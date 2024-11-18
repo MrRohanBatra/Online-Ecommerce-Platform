@@ -31,37 +31,37 @@ struct ProductInfo
     float rating;
 };
 
-struct TreeNode
+struct TrieNode
 {
-    unordered_map<char, TreeNode *> children;
+    unordered_map<char, TrieNode *> children;
     vector<int> productIds;
     bool isEndOfWord;
 
-    TreeNode()
+    TrieNode()
     {
         isEndOfWord = false;
     }
 };
 
-class Tree
+class Trie
 {
 private:
-    TreeNode *root;
+    TrieNode *root;
 
 public:
-    Tree()
+    Trie()
     {
-        root = new TreeNode();
+        root = new TrieNode();
     }
 
     void insert(string name, int productId)
     {
-        TreeNode *node = root;
+        TrieNode *node = root;
         for (char c : name)
         {
             if (node->children.find(c) == node->children.end())
             {
-                node->children[c] = new TreeNode();
+                node->children[c] = new TrieNode();
             }
             node = node->children[c];
         }
@@ -71,7 +71,7 @@ public:
 
     vector<int> search(string name)
     {
-        TreeNode *node = root;
+        TrieNode *node = root;
         for (char c : name)
         {
             if (node->children.find(c) == node->children.end())
@@ -88,7 +88,7 @@ public:
         return deleteHelper(root, name, 0, productId);
     }
 
-    bool deleteHelper(TreeNode *node, string name, int depth, int productId)
+    bool deleteHelper(TrieNode *node, string name, int depth, int productId)
     {
         if (!node)
             return false;
@@ -448,7 +448,7 @@ class ECommerceCatalog
 {
 private:
     ProductList productList;
-    Tree productTree;
+    Trie productTrie;
     unordered_map<string, User> users;
     string currentUser;
 
@@ -486,7 +486,7 @@ public:
     void insertProduct(int id, string name, float price, string category, int stock, string description, float rating)
     {
         productList.insertProduct(id, name, price, category, stock, description, rating);
-        productTree.insert(name, id);
+        productTrie.insert(name, id);
     }
 
     void displayProducts()
@@ -496,7 +496,7 @@ public:
 
     void searchProductByName(string name)
     {
-        vector<int> productIds = productTree.search(name);
+        vector<int> productIds = productTrie.search(name);
         if (!productIds.empty())
         {
             cout << "Product(s) found: " << name << " with IDs: ";
@@ -585,25 +585,27 @@ void showMenu()
     cout << "9. Exit\n";
 }
 
-void setupConsole() {
-    // Set the console window title
-    #ifdef _WIN32
-        system("title E-commerce Product Catalog");  
-    #elif __APPLE__ || __linux__
-        cout << "\033]0;E-commerce Product Catalog\007"; 
-    #endif
 
    
-    cout << "E-commerce Product Catalog" << endl;
 
     
-    #ifdef _WIN32
-        system("cls");        
-        system("color 70");   
-    #elif __APPLE__ || __linux__
-        system("clear");    
-        cout << "\033[47;30m"; 
-    #endif
+void setupConsole()
+{
+#ifdef _WIN32
+    system("title E-commerce Product Catalog");
+    system("cls");
+    system("color F0");
+#else
+    cout << "\033]0;E-commerce Product Catalog\007";
+    system("clear");
+    cout << "\033[47;30m";
+    
+    for (int i = 0; i < 50; ++i)
+    {
+        cout << string(100, ' ') << endl;
+    }
+    system("clear");
+#endif
 }
 int main()
 {
