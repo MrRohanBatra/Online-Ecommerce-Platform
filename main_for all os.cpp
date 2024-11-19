@@ -188,7 +188,7 @@ public:
                  << " | Category: " << temp->info.category << " | Stock: " << temp->info.stock
                  << " | Rating: " << temp->info.rating << "/5" << endl;
             cout << "Description: " << temp->info.description << endl;
-            cout<<endl;
+            cout << endl;
             temp = temp->next;
         }
     }
@@ -209,7 +209,8 @@ public:
                 cout << "ID: " << temp->id << " | Name: " << temp->info.name << " | Price: ₹" << temp->info.price
                      << " | Stock: " << temp->info.stock << " | Rating: " << temp->info.rating << "/5" << endl;
                 cout << "Description: " << temp->info.description << endl;
-                cout<<endl<<endl;
+                cout << endl
+                     << endl;
                 found = true;
             }
             temp = temp->next;
@@ -217,7 +218,7 @@ public:
         if (!found)
         {
             cout << "No products found in category: " << category << endl;
-            cout<<endl;
+            cout << endl;
         }
     }
 
@@ -391,17 +392,17 @@ public:
         return false;
     }
 
-    void purchaseProduct(int id,int topurchase)
+    void purchaseProduct(int id, int topurchase)
     {
         Product *temp = head;
         while (temp)
         {
             if (temp->id == id)
             {
-                if (temp->info.stock-topurchase > 0)
+                if (temp->info.stock - topurchase > 0)
                 {
-                    
-                    temp->info.stock-=topurchase;
+
+                    temp->info.stock -= topurchase;
                     cout << "Purchased " << temp->info.name << ". Remaining stock: " << temp->info.stock << endl;
                 }
                 else
@@ -440,7 +441,8 @@ public:
                  << " | Category: " << topProduct->info.category << " | Stock: " << topProduct->info.stock
                  << " | Rating: " << topProduct->info.rating << "/5" << endl;
             cout << "Description: " << topProduct->info.description << endl;
-            cout<<endl<<endl;
+            cout << endl
+                 << endl;
         }
     }
 };
@@ -538,10 +540,10 @@ public:
         productList.saveProductsToFile(filename);
     }
 
-    void purchaseProduct(int id,int topurchase)
+    void purchaseProduct(int id, int topurchase)
     {
 
-        productList.purchaseProduct(id,topurchase);
+        productList.purchaseProduct(id, topurchase);
     }
     void displayByRating()
     {
@@ -586,10 +588,6 @@ void showMenu()
     cout << "9. Exit\n";
 }
 
-
-   
-
-    
 void setupConsole()
 {
 #ifdef _WIN32
@@ -600,7 +598,7 @@ void setupConsole()
     cout << "\033]0;E-commerce Product Catalog\007";
     system("clear");
     cout << "\033[47;30m";
-    
+
     for (int i = 0; i < 50; ++i)
     {
         cout << string(100, ' ') << endl;
@@ -617,13 +615,17 @@ int main()
 
     catalog.loadProducts(loadFilename);
     setupConsole();
-    cout<<"\t\t\t\t\t\t"<<" ---------------------------"<<endl;
-    cout<<"\t\t\t\t\t\t"<<"|                           |"<<endl;
-    cout<<"\t\t\t\t\t\t"<<"|        E-COMMERCE         |"<<endl;
-    cout<<"\t\t\t\t\t\t"<<"|      PRODUCT CATALOG      |"<<endl;
-    cout<<"\t\t\t\t\t\t"<<"|                           |"<<endl;
-    cout<<"\t\t\t\t\t\t"<<" ---------------------------"<<endl;
-    cout<<"\t\t\t\t"<<"    WELCOME TO THE INTERFACE OF E-COMMERCE PRODUCT CATALOG"<<endl<<endl<<endl<<endl<<endl;
+    cout << "\t\t\t\t\t\t" << " ---------------------------" << endl;
+    cout << "\t\t\t\t\t\t" << "|                           |" << endl;
+    cout << "\t\t\t\t\t\t" << "|        E-COMMERCE         |" << endl;
+    cout << "\t\t\t\t\t\t" << "|      PRODUCT CATALOG      |" << endl;
+    cout << "\t\t\t\t\t\t" << "|                           |" << endl;
+    cout << "\t\t\t\t\t\t" << " ---------------------------" << endl;
+    cout << "\t\t\t\t" << "    WELCOME TO THE INTERFACE OF E-COMMERCE PRODUCT CATALOG" << endl
+         << endl
+         << endl
+         << endl
+         << endl;
 
     string username, password;
     cout << "Please login to continue\n";
@@ -682,13 +684,13 @@ int main()
             cin >> rating;
 
             catalog.insertProduct(id, name, price, category, stock, description, rating);
-            cout<<"Product inserted"<<endl;
+            cout << "Product inserted" << endl;
             pressanykey();
             break;
         }
         case 2:
             catalog.displayProducts();
-            cout<<endl;
+            cout << endl;
             pressanykey();
             break;
         case 3:
@@ -733,14 +735,14 @@ int main()
         case 8:
         {
             catalog.displayProducts();
-            cout<<endl;
+            cout << endl;
             int id;
             cout << "Enter product ID to purchase: ";
             cin >> id;
-            cout<<"Enter Quantity to purchase: ";
+            cout << "Enter Quantity to purchase: ";
             int topurchase;
-            cin>>topurchase;
-            catalog.purchaseProduct(id,topurchase);
+            cin >> topurchase;
+            catalog.purchaseProduct(id, topurchase);
             pressanykey();
             break;
         }
