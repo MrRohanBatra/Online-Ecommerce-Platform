@@ -188,6 +188,7 @@ public:
                  << " | Category: " << temp->info.category << " | Stock: " << temp->info.stock
                  << " | Rating: " << temp->info.rating << "/5" << endl;
             cout << "Description: " << temp->info.description << endl;
+            cout<<endl;
             temp = temp->next;
         }
     }

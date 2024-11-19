@@ -47,13 +47,6 @@ Furniture
 150
 Durable wooden table suitable for office and home use.
 4.2
-108
-Blender
-2499.5
-Kitchen Appliances
-80
-Compact blender with multiple speed settings and a safety lock.
-4.4
 109
 Shoes
 1299
@@ -65,6 +58,6 @@ Comfortable running shoes with enhanced grip and cushioning.
 Watch
 5499.99
 Accessories
-100
+96
 Stylish smartwatch with health tracking and long battery life.
 4.9
